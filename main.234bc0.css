@@ -2778,7 +2778,7 @@ pre .id {
         display: none;
         position: fixed;
         left: 0;
-        width: 100%;
+        width: 70%;
         z-index: 9999
     }
     .header-menu.tools-nav ul {
