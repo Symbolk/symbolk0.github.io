@@ -1576,12 +1576,12 @@ pre .id {
     display: none
 }
 .tools-col .tools-section .search-wrap {
-    width: 150px;
+    width: 200px;
     margin: 20px 20px 10px;
     position: relative
 }
 .tools-col .tools-section .search-wrap .search-ipt {
-    width: 150px;
+    width: 200px;
     color: #fff;
     background: none;
     border: none;
