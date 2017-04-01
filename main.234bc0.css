@@ -1567,7 +1567,7 @@ pre .id {
 .tools-col .tools-wrap {
     height: 100%;
     color: #e5e5e5;
-    width: 360px;
+    width: 200px;
     overflow: hidden;
     overflow-y: auto
 }
@@ -1576,12 +1576,12 @@ pre .id {
     display: none
 }
 .tools-col .tools-section .search-wrap {
-    width: 310px;
+    width: 150px;
     margin: 20px 20px 10px;
     position: relative
 }
 .tools-col .tools-section .search-wrap .search-ipt {
-    width: 310px;
+    width: 150px;
     color: #fff;
     background: none;
     border: none;
