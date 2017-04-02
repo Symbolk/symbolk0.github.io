@@ -81,7 +81,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/Symbolk" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
@@ -124,7 +124,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/Symbolk" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -179,30 +179,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up"><a href="#因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up" class="headerlink" title="因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up~"></a>因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up~</h3><h3 id="系统篇"><a href="#系统篇" class="headerlink" title="系统篇"></a>系统篇</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装7zip</span></div><div class="line">sudo apt install 7zip-full</div><div class="line"><span class="comment"># 解压</span></div><div class="line">7z x *.7z</div><div class="line"><span class="comment"># 解压rar/zip</span></div><div class="line">sudo apt-get install rar</div><div class="line">sudo apt-get install unrar</div><div class="line">unrar e *.rar</div><div class="line">unzip *.zip</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="Java篇"><a href="#Java篇" class="headerlink" title="Java篇"></a>Java篇</h3><h5 id="1-etc-profile-jdk及maven路径设置"><a href="#1-etc-profile-jdk及maven路径设置" class="headerlink" title="1, /etc/profile: jdk及maven路径设置"></a>1, /etc/profile: jdk及maven路径设置</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/usr/jdk/jdk1.8.0_74</div><div class="line">CLASS_PATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar</div><div class="line">PATH=$JAVA_HOME/bin:$PATH</div><div class="line">export JAVA_HOME CLASS_PATH PATH</div><div class="line"></div><div class="line">MAVEN_HOME=/usr/bin/apache-maven-3.3.9</div><div class="line">export MAVEN_HOME</div><div class="line">export PATH=$&#123;PATH&#125;:$&#123;MAVEN_HOME&#125;/bin</div></pre></td></tr></table></figure>
-<p>别忘了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
-<hr>
-<h3 id="Javascript篇"><a href="#Javascript篇" class="headerlink" title="Javascript篇"></a>Javascript篇</h3><h5 id="2-安装git并配置"><a href="#2-安装git并配置" class="headerlink" title="2, 安装git并配置"></a>2, 安装git并配置</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install git -y</div><div class="line">$ git config --global user.name <span class="string">"Your Name"</span></div><div class="line">$ git config --global user.email <span class="string">"email@example.com"</span></div></pre></td></tr></table></figure>
-<h5 id="3-安装SublimeText3"><a href="#3-安装SublimeText3" class="headerlink" title="3, 安装SublimeText3"></a>3, 安装SublimeText3</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ dpkg -i sublime_text.deb</div></pre></td></tr></table></figure>
-<h5 id="4-安装node-js"><a href="#4-安装node-js" class="headerlink" title="4, 安装node.js"></a>4, 安装node.js</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo apt-get install g++ </div><div class="line">$ sudo apt-get install libssl-dev</div><div class="line">$ wget http://nodejs.org/dist/v0.8.16/node-v0.8.16.tar.gz </div><div class="line">$ tar zxvf node-v0.8.16.tar.gz</div><div class="line">$ <span class="built_in">cd</span> node-v </div><div class="line">$ ./configure </div><div class="line">$ make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<p>或从<a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js官网</a>下载 Linux Binary(x86/64):6.10.1</p>
-<h5 id="5-安装shadowsocks与SwitchyOmega-for-Chrome"><a href="#5-安装shadowsocks与SwitchyOmega-for-Chrome" class="headerlink" title="5, 安装shadowsocks与SwitchyOmega for Chrome"></a>5, 安装shadowsocks与SwitchyOmega for Chrome</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pip install shadowsocks</div><div class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install shadowsocks-qt5</div></pre></td></tr></table></figure>
-<p>从<a href="https://github.com/FelisCatus/SwitchyOmega/releases/" target="_blank" rel="external">SwitchyOmega</a>Github下载.crx文件，拖入Chrome；设置自动代理规则列表网址为：</p>
-<p><a href="https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt" target="_blank" rel="external">https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt</a></p>
-<p>P.S. 详见另一篇Blog：<a href="“悬停显示”">Shadowsocks+BandwagonVPS在Linux中自动科学上网</a></p>
-<hr>
-<h3 id="Python篇"><a href="#Python篇" class="headerlink" title="Python篇"></a>Python篇</h3><h5 id="6-安装pip"><a href="#6-安装pip" class="headerlink" title="6, 安装pip"></a>6, 安装pip</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ apt install python-pip -y</div></pre></td></tr></table></figure>
-<h5 id="7-安装各种ML库"><a href="#7-安装各种ML库" class="headerlink" title="7, 安装各种ML库"></a>7, 安装各种ML库</h5><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># apt安装</span></div><div class="line">$ sudo apt-get install python-numpy </div><div class="line">$ sudo apt-get install python-scipy </div><div class="line">$ sudo apt-get install python-matplotlib </div><div class="line">$ sudo apt-get install python-pandas </div><div class="line">$ sudo apt-get install python-sklearn</div><div class="line"><span class="comment"># pip安装</span></div><div class="line">$ sudo apt install python-pip -y</div><div class="line">$ pip install numpy scipy matplotlib</div><div class="line">$ sudo pip install -U scikit-learn</div></pre></td></tr></table></figure>
-<h5 id="8-安装绘图库"><a href="#8-安装绘图库" class="headerlink" title="8, 安装绘图库"></a>8, 安装绘图库</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装python tkinter</span></div><div class="line">sudo apt install python-tk</div></pre></td></tr></table></figure>
-<h5 id="9-安装xgboost"><a href="#9-安装xgboost" class="headerlink" title="9, 安装xgboost"></a>9, 安装xgboost</h5><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo apt install git build-essential python-dev python-setuptools</div><div class="line">git <span class="built_in">clone</span> --recursive https://github.com/dmlc/xgboost</div><div class="line"><span class="built_in">cd</span> xgboost</div><div class="line">make -j4</div><div class="line"><span class="built_in">cd</span> python-package/</div><div class="line">sudo python setup.py install</div></pre></td></tr></table></figure>
-<p>各种测试<br>python</p>
-<blockquote>
-<blockquote>
-<p>import xgboost<br>import numpy,…<br>…</p>
-</blockquote>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2017/04/02/My-Ubuntu-Config/#more">more >></a>
+        
       
 
       
