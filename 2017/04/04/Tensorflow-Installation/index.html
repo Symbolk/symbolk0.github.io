@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://symbolk.com">
-  <title>PTest | SymbolK&#39;s Blog</title>
+  <title>Tensorflow Installation（Tf敏捷安装） | SymbolK&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="PTest">
-<meta property="og:url" content="http://symbolk.com/2017/04/02/PTest/index.html">
+  <meta name="description" content="Tensorflow敏捷安装(Ubuntu16.04)有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tensorflow Installation（Tf敏捷安装）">
+<meta property="og:url" content="http://symbolk.com/2017/04/04/Tensorflow-Installation/index.html">
 <meta property="og:site_name" content="SymbolK's Blog">
-<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1491137088&di=76d5ac62d75f71d91dc4655853645c66&src=http://images.liqucn.com/h017/h92/img201409241413420844_info360X320.jpg">
-<meta property="og:updated_time" content="2017-04-02T12:46:51.060Z">
+<meta property="og:description" content="Tensorflow敏捷安装(Ubuntu16.04)有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。">
+<meta property="og:updated_time" content="2017-04-04T06:32:25.612Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PTest">
-<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1491137088&di=76d5ac62d75f71d91dc4655853645c66&src=http://images.liqucn.com/h017/h92/img201409241413420844_info360X320.jpg">
+<meta name="twitter:title" content="Tensorflow Installation（Tf敏捷安装）">
+<meta name="twitter:description" content="Tensorflow敏捷安装(Ubuntu16.04)有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。">
   
     <link rel="alternative" href="/atom.xml" title="SymbolK&#39;s Blog" type="application/atom+xml">
   
@@ -162,28 +163,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="photo-PTest" class="article article-type-photo " itemscope itemprop="blogPost">
+            <article id="post-Tensorflow-Installation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      PTest
+      Tensorflow Installation（Tf敏捷安装）
     </h1>
   
 
         
-        <a href="/2017/04/02/PTest/" class="archive-article-date">
-  	<time datetime="2017-04-02T12:42:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-02</time>
+        <a href="/2017/04/04/Tensorflow-Installation/" class="archive-article-date">
+  	<time datetime="2017-04-04T06:18:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1491137088&amp;di=76d5ac62d75f71d91dc4655853645c66&amp;src=http://images.liqucn.com/h017/h92/img201409241413420844_info360X320.jpg" alt="Test"></p>
-
+        <h2 id="Tensorflow敏捷安装-Ubuntu16-04"><a href="#Tensorflow敏捷安装-Ubuntu16-04" class="headerlink" title="Tensorflow敏捷安装(Ubuntu16.04)"></a>Tensorflow敏捷安装(Ubuntu16.04)</h2><h4 id="有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。"><a href="#有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。" class="headerlink" title="有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。"></a>有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。</h4><a id="more"></a>
+<h3 id="首先要装很多Nvidia的东西："><a href="#首先要装很多Nvidia的东西：" class="headerlink" title="首先要装很多Nvidia的东西："></a>首先要装很多Nvidia的东西：</h3><h5 id="NVIDIA-requirements-to-run-TensorFlow-with-GPU-support"><a href="#NVIDIA-requirements-to-run-TensorFlow-with-GPU-support" class="headerlink" title="NVIDIA requirements to run TensorFlow with GPU support"></a>NVIDIA requirements to run TensorFlow with GPU support</h5><p>1, <a href="https://developer.nvidia.com/cuda-downloads" target="_blank" rel="external">CUDA Toolkit</a>（点击下载deb文件）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Install repository meta-data</span></div><div class="line">sudo dpkg -i cuda-repo-&lt;distro&gt;_&lt;version&gt;_&lt;architecture&gt;.deb</div><div class="line"><span class="comment"># Update the Apt repository cache</span></div><div class="line">sudo apt update</div><div class="line"><span class="comment"># Install CUDA</span></div><div class="line">sudo apt install cuda</div><div class="line"><span class="comment"># The PATH variable needs to include /usr/local/cuda-8.0/bin</span></div><div class="line"><span class="comment"># To add this path to the PATH variable:</span></div><div class="line">$ <span class="built_in">export</span> PATH=/usr/<span class="built_in">local</span>/cuda-8.0/bin<span class="variable">$&#123;PATH:+:$&#123;PATH&#125;</span>&#125;</div><div class="line"><span class="comment"># In addition, when using the runfile installation method, the LD_LIBRARY_PATH variable needs to contain /usr/local/cuda-8.0/lib64 on a 64-bit system, or /usr/local/cuda-8.0/lib on a 32-bit system</span></div><div class="line">To change the environment variables <span class="keyword">for</span> 64-bit operating systems:</div><div class="line">$ <span class="built_in">export</span> LD_LIBRARY_PATH=/usr/<span class="built_in">local</span>/cuda-8.0/lib64\</div><div class="line">                         <span class="variable">$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;</span></div></pre></td></tr></table></figure>
+<p>2，cuDNN v5.1（NVIDIA CUDA® Deep Neural Network library (cuDNN)）</p>
+<p>安装cudnn比较简单，简单地说，就是复制几个文件：库文件和头文件。将cudnn的头文件复制到cuda安装路径的include路径下，将cudnn的库文件复制到cuda安装路径的lib64路径下。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#解压文件</span></div><div class="line">tar -zxvf cudnn-6.5-linux-x64-v2.tgz</div><div class="line"><span class="comment">#切换路径</span></div><div class="line"><span class="built_in">cd</span> cuda/lib64</div><div class="line"><span class="comment">#复制lib文件到cuda安装路径下的lib64/</span></div><div class="line">sudo cp lib* /usr/<span class="built_in">local</span>/cuda-8.0/lib64/</div><div class="line"><span class="comment">#复制头文件</span></div><div class="line"><span class="built_in">cd</span> ..</div><div class="line"><span class="built_in">cd</span> cuda/include</div><div class="line">sudo cp cudnn.h /usr/<span class="built_in">local</span>/cuda-8.0/include/</div><div class="line"></div><div class="line"><span class="comment">#更新软连接</span></div><div class="line"><span class="built_in">cd</span> /usr/<span class="built_in">local</span>/cuda-8.0/lib64</div><div class="line">sudo rm -rf libcudnn.so libcudnn.so.6.5</div><div class="line">ls -al</div><div class="line">sudo ln <span class="_">-s</span> libcundnn.so.8.0.51 libcudnn.so.5</div><div class="line">sudo ln <span class="_">-s</span> libcundnn.so.8.0.51 libcudnn.so.8.0</div><div class="line">sudo ln <span class="_">-s</span> libcundnn.so.8.0 libcudnn.so</div></pre></td></tr></table></figure>
+<p>3，NVIDIA CUDA Profile Tools Interface<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">sudo apt install libcupti-dev</div><div class="line">``</div><div class="line"></div><div class="line"><span class="comment">#### 好吧，一整理好像也不是很多，就是各种Google比较麻烦</span></div><div class="line"></div><div class="line"><span class="comment">### 终于来到了安装TensorFlow的时刻</span></div><div class="line"></div><div class="line">```sh</div><div class="line">sudo apt install python-pip python-dev</div><div class="line">pip install tensorflow-gpu </div><div class="line"><span class="comment"># 测试：</span></div><div class="line">python</div><div class="line">&gt;&gt;&gt; import tensorflow as tf</div><div class="line">&gt;&gt;&gt; hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</div><div class="line">&gt;&gt;&gt; sess = tf.Session()</div><div class="line">&gt;&gt;&gt; <span class="built_in">print</span>(sess.run(hello))</div></pre></td></tr></table></figure></p>
+<h5 id="参考链接：（https-www-tensorflow-org-install-install-linux-）"><a href="#参考链接：（https-www-tensorflow-org-install-install-linux-）" class="headerlink" title="参考链接：（https://www.tensorflow.org/install/install_linux ）"></a>参考链接：（<a href="https://www.tensorflow.org/install/install_linux" target="_blank" rel="external">https://www.tensorflow.org/install/install_linux</a> ）</h5>
       
 
       
@@ -212,6 +219,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -262,7 +280,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://symbolk.com/2017/04/02/PTest/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://symbolk.com/2017/04/04/Tensorflow-Installation/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -278,7 +296,7 @@
   
   
     <a href="/2017/04/02/My-Ubuntu-Config/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">My Ubuntu Config</div>
+      <div class="article-nav-title">My Ubuntu Config（个人Ubuntu开发环境配置）</div>
       <i class="icon-circle-right"></i>
     </a>
   
