@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://symbolk.com">
-  <title>SymbolK&#39;s Blog</title>
+  <title>Push to Github(向github上传本地项目代码) | SymbolK&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Tips&amp;Tricks&amp;Routines, writing about life&amp;lives.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="SymbolK's Blog">
-<meta property="og:url" content="http://symbolk.com/index.html">
+  <meta name="description" content="向github上传本地项目代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Push to Github(向github上传本地项目代码)">
+<meta property="og:url" content="http://symbolk.com/2017/10/15/Push-to-Github/index.html">
 <meta property="og:site_name" content="SymbolK's Blog">
-<meta property="og:description" content="Tips&amp;Tricks&amp;Routines, writing about life&amp;lives.">
+<meta property="og:description" content="向github上传本地项目代码">
+<meta property="og:updated_time" content="2017-10-15T06:40:37.222Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SymbolK's Blog">
-<meta name="twitter:description" content="Tips&amp;Tricks&amp;Routines, writing about life&amp;lives.">
+<meta name="twitter:title" content="Push to Github(向github上传本地项目代码)">
+<meta name="twitter:description" content="向github上传本地项目代码">
   
     <link rel="alternative" href="/atom.xml" title="SymbolK&#39;s Blog" type="application/atom+xml">
   
@@ -162,16 +163,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-Push-to-Github" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Push-to-Github" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/10/15/Push-to-Github/">Push to Github(向github上传本地项目代码)</a>
+    <h1 class="article-title" itemprop="name">
+      Push to Github(向github上传本地项目代码)
     </h1>
   
 
@@ -184,12 +183,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="向github上传本地项目代码"><a href="#向github上传本地项目代码" class="headerlink" title="向github上传本地项目代码"></a>向github上传本地项目代码</h2>
-        
-          <a class="article-more-a" href="/2017/10/15/Push-to-Github/#more">more >></a>
-        
+        <h2 id="向github上传本地项目代码"><a href="#向github上传本地项目代码" class="headerlink" title="向github上传本地项目代码"></a>向github上传本地项目代码</h2><a id="more"></a>
+<h3 id="关联一个远程库"><a href="#关联一个远程库" class="headerlink" title="关联一个远程库"></a>关联一个远程库</h3><p>使用命令git remote add origin git@server-name:path/repo-name.git；<br>关联后，使用命令git push -u origin master第一次推送master分支的所有内容。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"symbolk@163.com"</span> </div><div class="line"><span class="built_in">cd</span> .ssh</div><div class="line"><span class="comment"># copy id_rsa.pub</span></div><div class="line"></div><div class="line"><span class="comment"># paste to the github token area(account-settings)</span></div><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="初始化本地项目"><a href="#初始化本地项目" class="headerlink" title="初始化本地项目"></a>初始化本地项目</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> Code</div><div class="line"><span class="built_in">echo</span> <span class="string">"# Reponame"</span> &gt;&gt; README.md</div><div class="line">git init</div><div class="line">git add README.md</div><div class="line">git commit -m <span class="string">"First commit."</span></div><div class="line"><span class="comment"># 在github.com创建Code Repo</span></div><div class="line">git remote add origin git@github.com:Symbolk/Code.git</div><div class="line">git push -u origin master</div><div class="line">git add -A</div><div class="line">git commit <span class="_">-a</span> -m “First version.”</div><div class="line">git push origin master</div></pre></td></tr></table></figure>
+<hr>
+<h3 id="修改本地后向github上传与同步"><a href="#修改本地后向github上传与同步" class="headerlink" title="修改本地后向github上传与同步"></a>修改本地后向github上传与同步</h3><p>每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git add -A</div><div class="line">git commit <span class="_">-a</span> -m <span class="string">"..."</span></div><div class="line"><span class="comment"># update origin from master</span></div><div class="line">git push origin master</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># update master from origin</span></div><div class="line">git pull origin master</div><div class="line"><span class="comment"># get server changes</span></div><div class="line">git fetch</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#可以对上一次的提交做修改</span></div><div class="line">git commit --amend</div><div class="line"></div><div class="line"><span class="comment">#如果上一次的提交已经push了，那么需要加f参数覆盖服务端</span></div><div class="line">push <span class="_">-f</span></div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#撤销上一次的git add</span></div><div class="line">git reset HEAD</div></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>Too Many Thanks!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -220,18 +246,74 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/10/15/Push-to-Github/">Show All >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://symbolk.com/2017/10/15/Push-to-Github/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/04/Tensorflow-Installation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Tensorflow Installation（Tf敏捷安装）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 
@@ -239,200 +321,10 @@
 
 
   
-    <article id="post-Tensorflow-Installation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/04/Tensorflow-Installation/">Tensorflow Installation（Tf敏捷安装）</a>
-    </h1>
+    <div class="duoshuo"></div>
   
 
-        
-        <a href="/2017/04/04/Tensorflow-Installation/" class="archive-article-date">
-  	<time datetime="2017-04-04T06:18:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Tensorflow敏捷安装-Ubuntu16-04"><a href="#Tensorflow敏捷安装-Ubuntu16-04" class="headerlink" title="Tensorflow敏捷安装(Ubuntu16.04)"></a>Tensorflow敏捷安装(Ubuntu16.04)</h2><h4 id="有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。"><a href="#有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。" class="headerlink" title="有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。"></a>有人说Ubuntu最大的缺点就是太灵活了，不像Windows一样一路无脑next，一个软件有n种安装方式却往往让人无所适从。安装Tf尤其痛苦，因此整理下自己的安装过程（支持GPU计算）。</h4>
-        
-          <a class="article-more-a" href="/2017/04/04/Tensorflow-Installation/#more">more >></a>
-        
-      
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/04/Tensorflow-Installation/">Show All >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-My-Ubuntu-Config" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/02/My-Ubuntu-Config/">My Ubuntu Config（个人Ubuntu开发环境配置）</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/02/My-Ubuntu-Config/" class="archive-article-date">
-  	<time datetime="2017-04-02T11:37:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up"><a href="#因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up" class="headerlink" title="因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up~"></a>因为经常重装电脑，把自己常用的Ubuntu开发环境配置套路放在这里back个up~</h3>
-        
-          <a class="article-more-a" href="/2017/04/02/My-Ubuntu-Config/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/tips/" class="article-tag-list-link color5">tips</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/02/My-Ubuntu-Config/">Show All >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/01/hello-world/">Hello Hexo</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/01/hello-world/" class="archive-article-date">
-  	<time datetime="2017-04-01T12:18:08.267Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
-        
-          <a class="article-more-a" href="/2017/04/01/hello-world/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/01/hello-world/">Show All >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-  
 
 
           </div>
@@ -454,8 +346,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
